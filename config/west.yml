@@ -9,8 +9,8 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: jogrefer
-      remote: zmk-keyboard-jogrefer
+    - name: zmk-keyboard-jogrefer
+      remote: jogrefer
       revision: main
   self:
     path: config
