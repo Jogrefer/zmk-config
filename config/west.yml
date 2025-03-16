@@ -10,7 +10,7 @@ manifest:
       revision: main
       import: app/west.yml
     - name: zmk-keyboard-jogrefer
-      remote: jogrefer
+      remote: zmk-keyboard-jogrefer
       revision: main
   self:
     path: config
