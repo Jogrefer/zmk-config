@@ -3,14 +3,14 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: zmk-keyboard-jogrefer
-      url-base: https://github.com/jogrefer
+      url-base: https://github.com/Jogrefer
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
     - name: zmk-keyboard-jogrefer
-      remote: jogrefer
+      remote: zmk-keyboard
       revision: main
   self:
     path: config
