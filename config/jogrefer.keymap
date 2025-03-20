@@ -22,7 +22,7 @@
                 &kp GLOBE    &kp LCTRL &kp LALT &kp LCMD &kp SPACE &kp BACKSPACE &kp RBKT  &kp RCMD  &kp ENTER &kp SPACE &kp LEFT  &kp UP   &kp DOWN  &kp RIGHT
             >;
         };
-    }
+    };
 };
 
 /*
