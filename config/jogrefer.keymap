@@ -13,9 +13,8 @@
         ntilde: ntilde {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-            = <&macro_tap &kp TILDE &kp N>
-            ;
+            bindings = <&kp TILDE &kp N>;
+            label = "NTILDE";
         };
     };
 
