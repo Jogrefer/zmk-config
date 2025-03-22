@@ -16,7 +16,7 @@
                │  `  Z  Q  H  C  K  [   <  Ñ  J  ,  .  /  ⇪  │
                │  m  ⌃  ⌥  ⌘  ␣  ←  ]   ⌘  ↩︎  ␣  ←  ↑  ↓  →  │
                ╰─────────────────────────────────────────────╯ */
-            display-name: "Default";
+            display-name = "Default";
             bindings = <
                &kp ESC          &kp N1     &kp N2    &kp N3    &kp N4     &kp N5                                      &kp N6      &kp N7     &kp N8     &kp N9    &kp N0     &kp NUBS
                &kp TAB          &kp F      &kp M     &kp N     &kp G      &kp X                                       &kp W       &kp V      &kp B      &kp P     &kp Y      &kp MINUS
@@ -34,7 +34,7 @@
                │  BLE  MUT  NXT  PLY  PRV  BTD1  MB4  MB5  NLK  1    2    3    INS  MB3  │
                │  MSL  MSD  MSU  MSR  ␣    SUPR  MB2  MB1  ↩︎    EQL  HOM  PUP  PDN  END  │
                ╰─────────────────────────────────────────────────────────────────────────╯ */
-            display-name: "Functions";
+            display-name = "Functions";
             bindings = <
                &kp F1          &kp F2             &kp F3        &kp F4            &kp F5        &kp F6                             &kp F7           &kp F8        &kp F9     &kp F10      &kp F11          &kp F12
                &kp SCROLLLOCK  &kp C_VOL_UP       &kp C_BRI_UP  &bt BT_NXT        &bt BT_PRV    &bt BT_CLR                         &kp PRINTSCREEN  &kp N7        &kp N8     &kp N9       &kp KP_DIVIDE    &trans
