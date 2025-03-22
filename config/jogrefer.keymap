@@ -8,16 +8,18 @@
     tapping-term-ms = <150>;
 };
 
-macros {
-    ntilde: ntilde {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&kp TILDE &kp N>;
-        label = "NTILDE";
-    };
-};
-
 / {
+    macros {
+        ntilde: ntilde {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+            = <&macro_press &kp TILDE &kp N>,
+            <&macro_release &kp TILDE &kp N>;
+            label = "NTILDE";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
