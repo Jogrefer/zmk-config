@@ -5,15 +5,14 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
+
    behaviors {
       &mt {
          tapping-term-ms = <150>;
          retro-tap;
       };
    };
-};
 
-/ {
    keymap {
       compatible = "zmk,keymap";
 
