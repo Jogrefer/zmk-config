@@ -23,9 +23,9 @@
          #binding-cells = <0>;
          bindings =
             <&macro_press &kp LALT>,
-            <&macro_tap &N>,
+            <&macro_tap &kp N>,
             <&macro_release &kp LALT>,
-            <&macro_tap &N>;
+            <&macro_tap &kp N>;
       };
    };
 
