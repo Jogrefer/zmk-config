@@ -31,7 +31,7 @@
          compatible = "zmk,behavior-macro";
          #binding-cells = <0>;
          bindings =
-            <&macro_tap_time 200>
+            <&macro_tap_time 200>,
             <&kp CAPS>;
       };
    };
