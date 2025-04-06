@@ -8,11 +8,12 @@
 
    behaviors {
       mt {
-         tapping-term-ms = <150>;
+         tapping-term-ms = <125>;
+         require-prior-idle-ms = <125>;
       };
 
       lt {
-         tapping-term-ms = <150>;
+         tapping-term-ms = <125>;
       };
    };
 
@@ -25,14 +26,6 @@
             <&macro_tap &kp N>,
             <&macro_release &kp LALT>,
             <&macro_tap &kp N>;
-      };
-
-      capsmcr: capsmcr {
-         compatible = "zmk,behavior-macro";
-         #binding-cells = <0>;
-         bindings =
-            <&macro_tap_time 200>,
-            <&macro_tap &kp CAPSLOCK>;
       };
    };
 
@@ -52,7 +45,7 @@
                &kp ESC              &kp N1     &kp N2    &kp N3    &kp N4     &kp N5                                    &kp N6      &kp N7     &kp N8     &kp N9    &kp N0     &kp BACKSLASH
                &kp TAB              &kp F      &kp M     &kp N     &kp G      &kp X                                     &kp W       &kp V      &kp B      &kp P     &kp Y      &kp MINUS
                &kp LA(E)            &kp D      &kp T     &kp R     &kp S      &kp L          &kp GRAVE  &kp APOSTROPHE  &kp U       &kp A      &kp E      &kp O     &kp I      &kp EQUAL
-               &mt LSHIFT capsmcr   &kp Z      &kp Q     &kp H     &kp C      &kp K          &kp LBKT   &kp SEMICOLON   &ntilde     &kp J      &kp COMMA  &kp DOT   &kp SLASH  &mt RSHIFT capsmcr
+               &mt LSHIFT CAPSLOCK  &kp Z      &kp Q     &kp H     &kp C      &kp K          &kp LBKT   &kp SEMICOLON   &ntilde     &kp J      &kp COMMA  &kp DOT   &kp SLASH  &mt RSHIFT CAPSLOCK
                &lt 1 LC(LG(SPACE))  &kp LCTRL  &kp LALT  &kp LCMD  &kp SPACE  &kp BACKSPACE  &kp RBKT   &mt RCMD K_APP  &kp ENTER   &kp LEFT   &kp UP     &kp DOWN  &kp RIGHT  &none
             >;
          };
@@ -70,20 +63,21 @@
                &kp F1  &kp F2             &kp F3        &kp F4            &kp F5        &kp F6                              &kp F7           &kp F8      &kp F9       &kp F10        &kp F11          &kp F12
                &trans  &kp C_VOL_UP       &kp C_BRI_UP  &trans            &trans        &kp SCROLLLOCK                      &kp KP_NUMLOCK   &kp KP_N7   &kp KP_N8    &kp KP_N9      &kp KP_DIVIDE    &kp KP_MINUS
                &trans  &kp C_VOLUME_DOWN  &kp C_BRI_DN  &trans            &trans        &trans          &mkp MB3  &to 2     &kp PAUSE_BREAK  &kp KP_N4   &kp KP_N5    &kp KP_N6      &kp KP_MULTIPLY  &kp KP_PLUS
-               &trans  &kp C_MUTE         &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &trans          &mkp MB4  &mkp MB5  &kp KP_N0        &kp KP_N1   &kp KP_N2    &kp KP_N3      &kp INSERT       &capsmcr 
+               &trans  &kp C_MUTE         &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &trans          &mkp MB4  &mkp MB5  &kp KP_N0        &kp KP_N1   &kp KP_N2    &kp KP_N3      &kp INSERT       &trans 
                &trans  &trans             &trans        &trans            &trans        &kp DEL         &mkp MB2  &mkp MB1  &kp KP_EQUAL     &kp HOME    &kp PAGE_UP  &kp PAGE_DOWN  &kp END          &none
             >;
          };
 
+
          actions_layer {
-            // Esta capa es para las funciones de Bluetooth y otras de mouse.
+            // Esta capa es para las funciones de Bluetooth y mouse.
             display-name = "actions";
             bindings = <
-               &trans  &trans         &trans         &trans         &trans         &trans                             &trans  &trans          &trans        &trans          &trans           &trans
-               &trans  &out OUT_USB   &out OUT_BLE   &bt BT_NXT     &bt BT_PRV     &bt BT_CLR                         &trans  &trans          &trans        &trans          &trans           &trans
-               &trans  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &mkp MB3  &to 0     &trans  &msc SCRL_LEFT  &msc SCRL_UP  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans
-               &trans  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &mkp MB4  &mkp MB5  &trans  &mmv MOVE_LEFT  &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans 
-               &trans  &trans         &trans         &trans         &trans         &kp DEL        &mkp MB2  &mkp MB1  &trans  &trans          &trans        &trans          &trans           &none
+               &trans  &trans         &trans         &trans         &trans         &trans                             &trans  &trans           &trans          &trans          &trans           &trans
+               &trans  &out OUT_USB   &out OUT_BLE   &bt BT_NXT     &bt BT_PRV     &bt BT_CLR                         &trans  &msc SCRL_RIGHT  &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_LEFT   &trans
+               &trans  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &mkp MB3  &to 0     &trans  &msc SCRL_LEFT   &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans
+               &trans  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &mkp MB4  &mkp MB5  &trans  &mmv MOVE_LEFT   &mmv MOVE_UP    &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans 
+               &trans  &trans         &trans         &trans         &trans         &trans         &mkp MB2  &mkp MB1  &trans  &trans           &trans          &trans          &trans           &none
             >;
          };
    };
