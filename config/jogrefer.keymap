@@ -25,11 +25,12 @@
             <&macro_tap &kp N>,
             <&macro_release &kp LALT>,
             <&macro_tap &kp N>;
+      };
 
          ZMK_MACRO(caps_macro,
             tap-ms = <200>;
-            bindings = <&kp CAPS>;)
-      };
+            bindings = <&kp CAPS>;
+         )
    };
 
    keymap {
