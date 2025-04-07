@@ -8,8 +8,10 @@
 
    behaviors {
       mt {
-         tapping-term-ms = <200>;
-         require-prior-idle-ms = <100>;
+         tapping-term-ms = <100>;
+         flavor = "tap-preferred";
+         hold-trigger-on-release;
+         retro-tap;
       };
 
       lt {
